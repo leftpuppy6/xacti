@@ -1,7 +1,13 @@
 import Discord, { Message } from 'discord.js';
 const client = new Discord.Client();
 
-client.login('NzkyNDE2MTM2MzE4Mjg3ODgy.X-dZCQ.Ipes1wVu5OA8tREHj4RQUbErK_U')
+require("dotenv").config();
+
+if(process.env.DISCORD_BOT_KEY) {
+    client.login(process.env.DISCORD_BOT_KEY)
+} else {
+    console.error("DISCORD_BOT_KEY is not found.")
+}
 
 client.on('ready',()=>{
 	if(client.user) {
@@ -11,16 +17,31 @@ client.on('ready',()=>{
 	}
 })
 
+let id = "<@339754401566818314>";
+
 client.on('message',async (msg)=>{
     if(msg.content === 'a'){
-				msg.channel.send('HI', {files:[`${process.cwd()}/img/doggydogg.jpg`]})
-    }
+				msg.channel.send(id)
+            }
     if(msg.content === 'woods'){
 				msg.channel.send('', {files:[`${process.cwd()}/img/WOODS.jpg`]})
     }
     if(msg.content === 'shoreline'){
                 msg.channel.send('', {files:[`${process.cwd()}/img/Shoreline.jpg`]})
                 msg.channel.send('', {files:[`${process.cwd()}/img/resort.png`]})
+    }
+    if(msg.content === 'i'){
+				msg.channel.send('i',{tts:true})
+    }
+    if(msg.content.includes("*")) {
+        let str = "*"
+        for(let i = 0; i < 100; i=(i+1)|0) {
+            str += " *"
+        }
+        setTimeout(() => {
+          msg.channel.send(str, { tts: true });
+          msg.channel.send(id,{tts:true})
+        },1000)
     }
 });
 
