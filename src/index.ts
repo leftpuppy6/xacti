@@ -1,7 +1,7 @@
 import Discord, { Message } from 'discord.js';
 const client = new Discord.Client();
 
-client.login(process.env.DISCODE_BOT_KEY);
+client.login(process.env.DISCORD_BOT_KEY);
 
 client.on('ready',()=>{
 	if(client.user) {
