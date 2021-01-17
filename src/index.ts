@@ -27,16 +27,16 @@ client.on('message',async (msg)=>{
     if(msg.content === 'i'){
 				msg.channel.send('i',{tts:true})
     }
-    if(msg.content.includes("*")) {
-        let str = "*"
-        for(let i = 0; i < 100; i=(i+1)|0) {
-            str += " *"
-        }
-        setTimeout(() => {
-          msg.channel.send(str, { tts: true });
-          msg.channel.send(id,{tts:true})
-        },1000)
-    }
+    // if(msg.content.includes("*")) {
+    //     let str = "*"
+    //     for(let i = 0; i < 100; i=(i+1)|0) {
+    //         str += " *"
+    //     }
+    //     setTimeout(() => {
+    //       msg.channel.send(str, { tts: true });
+    //       msg.channel.send(id,{tts:true})
+    //     },1000)
+    // }
 });
 
 client.on('message', (msg)=>{
