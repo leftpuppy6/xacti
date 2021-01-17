@@ -1,7 +1,7 @@
 import Discord, { Message } from 'discord.js';
 const client = new Discord.Client();
 
-client.login("NzkyNDE2MTM2MzE4Mjg3ODgy.X-dZCQ.NoISVTuQwsTu5P5HxlfqRJ84khU");
+client.login(process.env.DISCODE_BOT_KEY);
 
 client.on('ready',()=>{
 	if(client.user) {
@@ -11,7 +11,7 @@ client.on('ready',()=>{
 	}
 })
 
-let id = "<@339754401566818314>";
+let id = "@339754401566818314";
 
 client.on('message',async (msg)=>{
     if(msg.content === 'a'){
