@@ -3,11 +3,7 @@ const client = new Discord.Client();
 
 require("dotenv").config();
 
-if(process.env.DISCORD_BOT_KEY) {
-    client.login(process.env.DISCORD_BOT_KEY)
-} else {
-    console.error("DISCORD_BOT_KEY is not found.")
-}
+client.login("NzkyNDE2MTM2MzE4Mjg3ODgy.X-dZCQ.NoISVTuQwsTu5P5HxlfqRJ84khU");
 
 client.on('ready',()=>{
 	if(client.user) {
