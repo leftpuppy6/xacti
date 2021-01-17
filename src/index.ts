@@ -1,8 +1,6 @@
 import Discord, { Message } from 'discord.js';
 const client = new Discord.Client();
 
-require("dotenv").config();
-
 client.login("NzkyNDE2MTM2MzE4Mjg3ODgy.X-dZCQ.NoISVTuQwsTu5P5HxlfqRJ84khU");
 
 client.on('ready',()=>{
