@@ -11,7 +11,7 @@ client.on('ready',()=>{
 	}
 })
 
-let id = "<@!339754401566818314>";
+let id = "<@!583338021579915295>";
 
 client.on('message',async (msg)=>{
     if(msg.content === 'a'){
