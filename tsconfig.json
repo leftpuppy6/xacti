@@ -3,7 +3,8 @@
     "src/**/*.ts"
   ],
   "exclude":[
-    "node_modules"
+    "node_modules",
+    "src/id.ts"
   ],
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig.json to read more about this file */

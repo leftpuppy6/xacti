@@ -1,47 +1,10 @@
-import Discord, { Message } from 'discord.js';
-const client = new Discord.Client();
+import {Message} from "discord.js"
 
-client.login(process.env.DISCORD_BOT_KEY);
+import {setup} from "./setup"
+import { handleMessage } from "./message";
 
-client.on('ready',()=>{
-	if(client.user) {
-		console.log(`${client.user.username}でログインしています。`)
-	} else {
-		throw new Error('client is not defined.');
-	}
+const client = setup()
+
+client.on("message", async (message:Message):Promise<void> => {
+    handleMessage(message)
 })
-
-let id = "<@!583338021579915295>";
-
-client.on('message',async (msg)=>{
-    if(msg.content === 'a'){
-				msg.channel.send(id)
-            }
-    if(msg.content === 'woods'){
-				msg.channel.send('', {files:[`${process.cwd()}/img/WOODS.jpg`]})
-    }
-    if(msg.content === 'shoreline'){
-                msg.channel.send('', {files:[`${process.cwd()}/img/Shoreline.jpg`]})
-                msg.channel.send('', {files:[`${process.cwd()}/img/resort.png`]})
-    }
-    if(msg.content === 'i'){
-				msg.channel.send('i',{tts:true})
-    }
-    // if(msg.content.includes("*")) {
-    //     let str = "*"
-    //     for(let i = 0; i < 100; i=(i+1)|0) {
-    //         str += " *"
-    //     }
-    //     setTimeout(() => {
-    //       msg.channel.send(str, { tts: true });
-    //       msg.channel.send(id,{tts:true})
-    //     },1000)
-    // }
-});
-
-client.on('message', (msg)=>{
-    if(msg.content.startsWith('aa')){
-        msg.delete();
-        msg.channel.send(msg.content.slice(5,msg.content.length));
-    }
-});
