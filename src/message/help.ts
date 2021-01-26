@@ -1,5 +1,9 @@
 import {Message} from "discord.js"
 
-export function help(msg: Message) {
-  msg.channel.send("help")
+export function help(message: Message):void {
+  if(message.author.bot) {
+    return 
+  } else {
+    message.channel.send("help")
+  }
 }
