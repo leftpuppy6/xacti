@@ -1,6 +1,1 @@
-worker: yarn dev
-
-
-
-
-
+worker: yarn heroku-dev
