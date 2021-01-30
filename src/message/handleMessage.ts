@@ -15,16 +15,15 @@ export function handleMessage(message: Message): void {
       invite(message)
       break;
     case `${prefix}`:
+      message.channel.send("Xacti needs a command. You can see the commands with `xacti help`")
+      break;
+    default:
       const isInvalid = [...Object.keys(commands)].some((command) => {
         return message.content.slice(6) !== command
       })
       if (isInvalid) {
         getInvalidCommand(message)
-        break
       }
-      message.channel.send("Xacti needs a command. You can see the commands with `xacti help`")
-      break;
-    default:
       break;
   }
 }
