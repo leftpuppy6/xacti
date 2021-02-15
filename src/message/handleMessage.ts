@@ -7,6 +7,10 @@ import { getInvalidCommand } from "./getInvalidCommand";
 import { prefix } from "../env"
 
 export function handleMessage(message: Message): void {
+  if (message.author.bot) {
+    return
+  }
+
   switch (message.content) {
     case `${prefix} ${commands.help}`:
       help(message)
