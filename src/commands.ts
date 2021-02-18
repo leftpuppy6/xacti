@@ -1,8 +1,13 @@
-interface Commands {
-  [key: string]: string
-}
+import {SetSameTypeObject} from "./lib/type/utilityTypes"
 
-export const commands: Commands = {
+/**
+ * Commands represent the xacti commands.
+ * 
+ * @internal this type might move to a type file.
+ */
+type Commands = "invite" | "help"
+
+export const commands: SetSameTypeObject<Commands> = {
+  invite: "invite",
   help: "help",
-  invite: "invite"
-}
+};
