@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "ts-node-dev -r dotenv/config src/index.ts",
-    "heroku-dev": "rm tsconfig.json && npx tsc init && npx tsc --outDir ./dist && node dist/index.js",
+    "heroku-start": "rm tsconfig.json && npx tsc init && npx tsc --outDir ./dist && node dist/index.js",
     "start": "node dist/index.js",
     "build": "tsc"
   },
