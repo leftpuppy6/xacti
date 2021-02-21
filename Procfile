@@ -1,1 +1,1 @@
-worker: yarn heroku-dev
+worker: yarn heroku-start
