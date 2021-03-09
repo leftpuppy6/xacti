@@ -1,5 +1,4 @@
 import { readdirSync } from 'fs'
-import { Message } from "discord.js"
 import { CommandObject } from './types/xacti'
 
 import { setup } from "./setup"
