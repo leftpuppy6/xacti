@@ -1,6 +1,6 @@
 import { Message } from 'discord.js'
 
-export default {
+export = {
     name: 'help',
     execute(message: Message) {
         message.channel.send('help')

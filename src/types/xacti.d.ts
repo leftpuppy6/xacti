@@ -1,6 +1,8 @@
-import {Message} from 'discord.js'
+import { Message } from 'discord.js'
+
+type CommandName = 'help' | 'invite'
 
 export interface CommandObject {
-    name: string
+    name: CommandName
     execute: (message: Message) => void
 }
