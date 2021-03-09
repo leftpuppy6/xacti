@@ -22,8 +22,7 @@ client.on('message', async message => {
   if (!message.content.startsWith(prefix)) {
     return
   }
-  const arg = message.content.slice(prefix.length + 1)
-  const commandName = arg.toLowerCase()
+  const commandName = message.content.slice(prefix.length + 1).toLowerCase()
   const command = commands.get(commandName)
 
   command?.execute(message)
