@@ -1,6 +1,7 @@
 import Discord, { Client } from "discord.js"
 
 function handleLoginError(err: Error): void {
+  console.error(err)
   throw new Error("Unfortunately, Login failed. This might be because of the Discord key.")
 }
 
