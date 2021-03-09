@@ -10,9 +10,9 @@ const commands = new Map<string, CommandObject>()
 
 readdirSync(`${__dirname}/commands`)
   .filter(file => file.endsWith('.ts'))
-  .flatMap(file => {
-    const command = require(`./commands/${file}`)
-    commands.set(command.default.name, command.default)
+  .flatMap(async file => {
+    const command = await import(`./commands/${file}`)
+    commands.set(command.name, command)
   })
 
 client.on('message', async message => {
