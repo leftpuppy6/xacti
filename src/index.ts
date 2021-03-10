@@ -16,11 +16,15 @@ readdirSync(`${__dirname}/commands`)
   })
 
 client.on('message', async message => {
+
   if (message.author.bot) {
     return
   }
   if (!message.content.startsWith(prefix)) {
     return
+  }
+  if (message.content.startsWith(prefix)) {
+    console.log(message.content)
   }
   const commandName = message.content.slice(prefix.length + 1).toLowerCase()
   const command = commands.get(commandName)
