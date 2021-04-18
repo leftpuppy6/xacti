@@ -18,7 +18,7 @@ readdirSync(`${__dirname}/commands`)
 client.on('message', async message => {
   
   if (/[가-힣]/u.test(message.content)) {
-  message.channel.send("ここのサーバーは韓国語禁止です。\nKorean is NOT allowed.")
+  message.channel.send("このサーバーは韓国語禁止です。\nKorean is NOT allowed in this server.")
   } 
 
   if (message.author.bot) {
