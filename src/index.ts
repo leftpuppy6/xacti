@@ -17,8 +17,10 @@ readdirSync(`${__dirname}/commands`)
 
 client.on('message', async message => {
   
+  // TODO Pack these return statements.
   if (/[가-힣]/u.test(message.content)) {
-  message.channel.send("このサーバーは韓国語禁止です。\nKorean is NOT allowed in this server.")
+    message.channel.send("このサーバーは韓国語禁止です。\nKorean is NOT allowed in this server.")
+    return
   } 
 
   if (message.author.bot) {
@@ -27,9 +29,7 @@ client.on('message', async message => {
   if (!message.content.startsWith(prefix)) {
     return
   }
-  if (message.content.startsWith(prefix)) {
-    console.log(message.content)
-  }
+
   const commandName = message.content.slice(prefix.length + 1).toLowerCase()
   const command = commands.get(commandName)
 
