@@ -1,19 +1,11 @@
-import { readdirSync } from 'fs'
-import { CommandObject } from './types/xacti'
+import {getCommands} from "./utils/getCommands"
 
 import { setup } from "./setup"
 import { prefix } from './env'
 
 const client = setup()
 
-const commands = new Map<string, CommandObject>()
-
-readdirSync(`${__dirname}/commands`)
-  .filter(file => file.endsWith('.ts'))
-  .flatMap(async file => {
-    const command = await import(`./commands/${file}`)
-    commands.set(command.name, command)
-  })
+const commands = getCommands()
 
 client.on('message', async message => {
   
