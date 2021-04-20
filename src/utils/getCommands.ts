@@ -1,15 +1,13 @@
-import {readdirSync} from "fs"
+import {readdir} from "fs/promises"
 import {CommandObject} from "../types/xacti"
 
-export function getCommands(): Map<string, CommandObject> {
-    const commands = new Map<string, CommandObject>()
+export async function getCommands() {
+    const commands = await readdir(`${process.cwd()}/src/commands`).then(async (files) => {
+        return files.flatMap(async (file) => {
+          const command: CommandObject = await import(`${process.cwd()}/src/commands/${file}`)
+          return command
+        })
+    })
 
-readdirSync(`${process.cwd()}/src/commands`)
-  .filter(file => file.endsWith('.ts'))
-  .flatMap(async file => {
-    const command = await import(`../commands/${file}`)
-    commands.set(command.name, command)
-  })
-
-  return commands
+    return commands
 }
