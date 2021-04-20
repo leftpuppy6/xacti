@@ -1,7 +1,8 @@
 {
   "name": "xacti",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "dev": "ts-node-dev -r dotenv/config src/index.ts",
     "heroku-start": "rm tsconfig.json && npx tsc init && npx tsc --outDir ./dist && node dist/index.js",
