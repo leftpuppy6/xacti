@@ -4,10 +4,11 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "dev": "ts-node-dev -r dotenv/config src/index.ts",
+    "dev": "yarn createHelpMessage && yarn ts-node-dev -r dotenv/config src/index.ts",
     "heroku-start": "rm tsconfig.json && npx tsc init && npx tsc --outDir ./dist && node dist/index.js",
     "start": "node dist/index.js",
-    "build": "tsc"
+    "build": "tsc",
+    "createHelpMessage": "ts-node-dev scripts/createHelpMessage.ts"
   },
   "dependencies": {
     "discord.js": "^12.5.1"
