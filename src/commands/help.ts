@@ -5,7 +5,7 @@ export = {
     name: 'help',
     description: "Shows commands you can use.",
     async execute(message: Message) {
-        const helpMessageBuffer = await readFile(`${process.cwd()}/src/messages/message`)
+        const helpMessageBuffer = await readFile(`${process.cwd()}/assets/helpMessage`)
         const helpMessage = helpMessageBuffer.toString()
         message.channel.send("```" + helpMessage + "```")
     }

@@ -7,5 +7,5 @@ import {getCommands} from "../src/utils/getCommands"
     commands.flatMap((command) => {
         helpMessage += `${command.name.padEnd(10, " ")}: ${command.description}${"\n"}`
     })
-    writeFile(`${process.cwd()}/src/assets/helpMessage`, helpMessage.trimEnd())
+    writeFile(`${process.cwd()}/assets/helpMessage`, helpMessage.trimEnd())
 })()
