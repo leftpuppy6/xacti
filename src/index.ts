@@ -1,5 +1,4 @@
 import {getCommands} from "./utils/getCommands"
-import {CommandObject} from "./types/xacti"
 
 import { setup } from "./setup"
 import { prefix } from './env'
