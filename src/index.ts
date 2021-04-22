@@ -1,5 +1,4 @@
 import {getCommands} from "./utils/getCommands"
-import {CommandObject} from "./types/xacti"
 
 import { setup } from "./setup"
 import { prefix } from './env'
@@ -13,7 +12,6 @@ client.on('message', async message => {
     message.delete();
     reply.delete({ timeout: 5000 })
     
-
     return
   } 
   if (message.author.bot) {
