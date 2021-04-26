@@ -25,6 +25,8 @@ jobs:
           restore-keys: |
             yarn-
       - run: yarn
+      - run: git config --global user.name "xacti"
+      - run: git config --global user.email "xacti@email.com"
       - run: git add .
       - run: git commit -m "Pushed heroku"
       - run: git push origin heroku
