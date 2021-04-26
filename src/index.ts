@@ -8,8 +8,10 @@ const client = setup()
 client.on('message', async message => {
   // TODO Pack these return statements.
   if (/[가-힣]/u.test(message.content)) {
-    message.reply("このサーバーは韓国語禁止です。\nKorean is NOT allowed in this server.")
-    message.delete()
+    const reply = await message.reply("このサーバーは韓国語禁止です。\nKorean is NOT allowed in this server.")
+    message.delete();
+    reply.delete({ timeout: 5000 })
+    
     return
   } 
   if (message.author.bot) {
