@@ -1,12 +1,12 @@
-import { Message } from 'discord.js'
-import {readFile} from "fs/promises"
+import { Message } from "discord.js";
+import { readFile } from "fs/promises";
 
 export = {
-    name: 'help',
-    description: "Shows commands you can use.",
-    async execute(message: Message) {
-        const helpMessageBuffer = await readFile(`${process.cwd()}/assets/helpMessage`)
-        const helpMessage = helpMessageBuffer.toString()
-        message.channel.send("```" + helpMessage + "```")
-    }
-}
+  name: "help",
+  description: "Shows commands you can use.",
+  async execute(message: Message) {
+    const helpMessageBuffer = await readFile(`${process.cwd()}/assets/helpMessage`);
+    const helpMessage = helpMessageBuffer.toString();
+    message.channel.send("```" + helpMessage + "```");
+  },
+};
