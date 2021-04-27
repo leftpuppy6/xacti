@@ -1,6 +1,9 @@
 echo "Start setup"
 rm -rf .gitignore
 yarn
+mkdir assets
+touch assets/helpMessage
+yarn createHelpMessage
 echo "End setup"
 
 echo "Start build"
