@@ -14,10 +14,6 @@ jobs:
         with:
           node-version: 12.x
           registry-url: 'https://npm.pkg.github.com'
-      - run: git config --global user.name "xacti"
-      - run: git config --global user.email "xacti@email.com"
-      - run: git pull origin master
-      - run: git checkout -b heroku
-      - run: git push -f origin heroku
+        run: sh ./scripts/heroku.sh
         env:
           CI: true
