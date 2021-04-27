@@ -15,6 +15,7 @@ git config --global user.name "xacti"
 git config --global user.email "xacti@email.com"
 rm -rf .git
 git init
+git remote add origin https://github.com/leftpuppy6/xacti
 git checkout -b heroku
 git add dist
 git add assets
