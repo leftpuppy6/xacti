@@ -1,5 +1,6 @@
 echo "Start setup"
 rm -rf .gitignore
+yarn
 echo "End setup"
 
 echo "Start build"
