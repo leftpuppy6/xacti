@@ -1,5 +1,4 @@
 echo "Start setup"
-rm -rf .gitignore
 yarn
 mkdir assets
 touch assets/helpMessage
@@ -16,9 +15,8 @@ git config --global user.email "xacti@email.com"
 git checkout --orphan heroku
 git reset --hard
 rm -rf node_modules
-npm init -y
-echo "worker: node dist/src/index.js" > Procfile
-git add dist package.json Procfile
+git checkout master package.json Profile yarn.lock
+git add dist package.json Procfile yarn.lock assets
 git commit -m "Push to heroku"
 git push -f origin heroku
 echo "End git"
