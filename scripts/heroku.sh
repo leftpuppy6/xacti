@@ -13,12 +13,10 @@ echo "End build"
 echo "Start git"
 git config --global user.name "xacti"
 git config --global user.email "xacti@email.com"
-rm -rf .git
-git init
-git remote add origin https://github.com/leftpuppy6/xacti
-git checkout -b heroku
+git checkout --orphan heroku
+git reset --hard
+rm -rf node_modules
 git add dist
-git add assets
-git commit -m "Update files"
-git push origin -f origin heroku
+git commit -m "Push to heroku"
+git push -f origin heroku
 echo "End git"
