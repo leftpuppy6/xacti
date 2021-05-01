@@ -1,13 +1,9 @@
 echo "Start setup"
 yarn
-mkdir assets
-touch assets/helpMessage
-yarn createHelpMessage
 echo "End setup"
 
 echo "Start build"
 yarn build
-mv assets dist
 echo "End build"
 
 echo "Start git"

@@ -3,12 +3,14 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "dev": "yarn createHelpMessage && yarn ts-node-dev -r dotenv/config src/index.ts",
+    "dev": "yarn create-help-message && yarn ts-node-dev -r dotenv/config src/index.ts",
     "test": "jest -c jest.config.js --coverage",
     "start": "node dist/src/index.js",
-    "build": "tsc",
+    "build": "tsc --project tsconfig.build.json && yarn create-help-message && yarn move-files",
     "heroku-postbuild": "echo \"xacti doesn't have the build process on heroku\"",
-    "createHelpMessage": "ts-node-dev scripts/createHelpMessage.ts"
+    "create-assets": "sh scripts/createAssets.sh",
+    "move-files": "mv assets dist",
+    "create-help-message": "yarn create-assets && ts-node-dev scripts/createHelpMessage.ts"
   },
   "dependencies": {
     "discord.js": "^12.5.1"
