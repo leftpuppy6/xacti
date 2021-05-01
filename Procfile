@@ -1,1 +1,1 @@
-worker: yarn heroku-start
+worker: node dist/src/index.js
