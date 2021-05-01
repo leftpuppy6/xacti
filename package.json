@@ -5,7 +5,6 @@
   "scripts": {
     "dev": "yarn createHelpMessage && yarn ts-node-dev -r dotenv/config src/index.ts",
     "test": "jest -c jest.config.js --coverage",
-    "heroku-start": "sh ./scripts/heroku-start.sh",
     "start": "node dist/src/index.js",
     "build": "tsc",
     "heroku-postbuild": "echo \"xacti doesn't have the build process on heroku\"",
