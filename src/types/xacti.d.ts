@@ -1,6 +1,6 @@
 import { Message } from 'discord.js'
 
-type CommandName = 'help' | 'invite'
+type CommandName = 'help' | 'invite' | 'version'
 
 interface CommandObject {
     name: CommandName
