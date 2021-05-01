@@ -17,7 +17,8 @@ git checkout --orphan heroku
 git reset --hard
 rm -rf node_modules
 npm init -y
-git add dist package.json
+echo "worker: node dist/src/index.js" > Procfile
+git add dist package.json Procfile
 git commit -m "Push to heroku"
 git push -f origin heroku
 echo "End git"
