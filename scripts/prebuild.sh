@@ -18,7 +18,8 @@ fi
 yarn ts-node-dev scripts/createHelpMessage.ts
 
 # Move the assets folder to the dist/src folder.
-if [ "$CI" = true ]; then
+if [ $CI = true ]; then
+  mkdir $DIST
   rm -rf $DIST/$ASSETS
   mv $ASSETS $DIST/$ASSETS
 else
