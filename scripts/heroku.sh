@@ -16,7 +16,8 @@ git config --global user.email "xacti@email.com"
 git checkout --orphan heroku
 git reset --hard
 rm -rf node_modules
-git add dist
+npm init -y
+git add dist package.json
 git commit -m "Push to heroku"
 git push -f origin heroku
 echo "End git"
