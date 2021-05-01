@@ -8,6 +8,7 @@
     "heroku-start": "sh ./scripts/heroku-start.sh",
     "start": "node dist/src/index.js",
     "build": "tsc",
+    "heroku-postbuild": "echo \"xacti doesn't have the build process on heroku\"",
     "createHelpMessage": "ts-node-dev scripts/createHelpMessage.ts"
   },
   "dependencies": {
